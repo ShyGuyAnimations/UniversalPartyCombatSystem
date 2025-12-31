@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c78n0yfbk1p4q"]
+
+[ext_resource type="Script" uid="uid://cs3cc1uhke4de" path="res://battle_scene.gd" id="1_b278l"]
+[ext_resource type="PackedScene" uid="uid://oea2uyph2jxn" path="res://character.tscn" id="2_hvnqj"]
+[ext_resource type="Script" uid="uid://cnglyqccx5hwk" path="res://PlayerUi.gd" id="3_musxc"]
+[ext_resource type="Script" uid="uid://c26qfjlp7aoor" path="res://CombatActionButton.gd" id="4_teshm"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_b278l")
+
+[node name="Placeholder" parent="." instance=ExtResource("2_hvnqj")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Backdrop" type="Sprite2D" parent="."]
+
+[node name="PlayerCombatActionsUI" type="HBoxContainer" parent="."]
+offset_left = -375.0
+offset_top = 137.0
+offset_right = 376.0
+offset_bottom = 207.0
+script = ExtResource("3_musxc")
+buttons = [NodePath("CombatAction"), NodePath("CombatAction2"), NodePath("CombatAction3"), NodePath("CombatAction4")]
+
+[node name="CombatAction" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Action 1 (Space)"
+script = ExtResource("4_teshm")
+
+[node name="CombatAction2" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Action 1 (Space)"
+script = ExtResource("4_teshm")
+
+[node name="CombatAction3" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Action 1 (Space)"
+script = ExtResource("4_teshm")
+
+[node name="CombatAction4" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Action 1 (Space)"
+script = ExtResource("4_teshm")
+
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction" to="PlayerCombatActionsUI/CombatAction" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction2" to="PlayerCombatActionsUI/CombatAction2" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction3" to="PlayerCombatActionsUI/CombatAction3" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction4" to="PlayerCombatActionsUI/CombatAction4" method="_on_pressed"]

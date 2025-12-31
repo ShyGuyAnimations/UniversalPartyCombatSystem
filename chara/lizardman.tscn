@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbb8y2p54k7yt"]
+
+[ext_resource type="Script" uid="uid://crq6b7b7p75gc" path="res://Character.gd" id="1_0kwol"]
+[ext_resource type="Texture2D" uid="uid://opm3uffnxwul" path="res://assets/Reptile.png" id="2_5macf"]
+[ext_resource type="Resource" uid="uid://cdqtl8noyx0y7" path="res://Combat Actions/Swing.tres" id="2_y3j8d"]
+[ext_resource type="Resource" uid="uid://cl0ant4fxv7" path="res://Combat Actions/baseHeal.tres" id="3_0jttm"]
+[ext_resource type="Texture2D" uid="uid://dufcbhroq471y" path="res://assets/cursor_finger.png" id="3_2fhrg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjt0s"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa5vi"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wfnr8"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.827451)
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_0kwol")
+combat_actions = [ExtResource("2_y3j8d"), ExtResource("3_0jttm")]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_5macf")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -60.0
+offset_top = 80.0
+offset_right = 61.0
+offset_bottom = 107.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pjt0s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wa5vi")
+value = 50.0
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="HealthBar"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 120.0
+offset_bottom = 28.0
+text = "25/25"
+label_settings = SubResource("LabelSettings_wfnr8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Focus" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-150, 0)
+texture = ExtResource("3_2fhrg")
