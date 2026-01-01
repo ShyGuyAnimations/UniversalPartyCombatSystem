@@ -3,8 +3,8 @@ extends Node2D
 
 @export var players: Array = []
 @export var index : int = 0
-var dragonman = preload("res://chara/dragonman.tscn").instantiate()
-var bad = preload("res://chara/baddragon.tscn").instantiate()
+@onready var dragonman = preload("res://chara/dragonman.tscn").instantiate()
+@onready var bad = preload("res://chara/baddragon.tscn").instantiate()
 
 
 # Called when the node enters the scene tree for the first time.

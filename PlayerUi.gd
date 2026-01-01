@@ -5,9 +5,9 @@ extends HBoxContainer
 func _on_character_begin_turn(character):
 	
 	
-	"if character.is_player:
+	if character.is_player:
 		visible = character.is_player
-		_display_combat_actions(character.combat_actions)"
+		_display_combat_actions(character.combat_actions)
 	pass
 
 func _on_character_end_turn(character):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bteabg8b1ptda"]
+[gd_scene load_steps=11 format=3 uid="uid://bteabg8b1ptda"]
 
 [ext_resource type="Script" uid="uid://crq6b7b7p75gc" path="res://Character.gd" id="1_lllq6"]
 [ext_resource type="Resource" uid="uid://cdqtl8noyx0y7" path="res://Combat Actions/Swing.tres" id="2_3tya3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dufcbhroq471y" path="res://assets/cursor_finger.png" id="3_5ikp8"]
 [ext_resource type="Resource" uid="uid://cl0ant4fxv7" path="res://Combat Actions/baseHeal.tres" id="3_pk2pj"]
 [ext_resource type="Resource" uid="uid://brih87dtv7g74" path="res://Combat Actions/RecklessSwing.tres" id="4_gk2re"]
+[ext_resource type="Resource" uid="uid://bjd2rk4e0defv" path="res://Combat Actions/BaseCombatResource.tres" id="5_pk2pj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjt0s"]
 bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
@@ -22,7 +23,7 @@ shadow_color = Color(0, 0, 0, 0.827451)
 
 [node name="Character" type="Node2D"]
 script = ExtResource("1_lllq6")
-combat_actions = [ExtResource("2_3tya3"), ExtResource("3_pk2pj"), ExtResource("4_gk2re"), null]
+combat_actions = [ExtResource("2_3tya3"), ExtResource("3_pk2pj"), ExtResource("4_gk2re"), ExtResource("5_pk2pj")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_qyyhk")

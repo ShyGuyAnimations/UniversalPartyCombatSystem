@@ -17,7 +17,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerCombatActionsUI" type="HBoxContainer" parent="."]
 offset_left = -375.0
-offset_top = 137.0
+offset_top = 161.0
 offset_right = 376.0
 offset_bottom = 207.0
 script = ExtResource("3_musxc")

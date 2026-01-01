@@ -6,7 +6,7 @@ class_name Character
 @export var max_hp : int = 25
 @export var combat_actions : Array # Formerly combat_action, changed to hopefully make accessing and memory easier
 @export var opponents : Node
-@export var target : Node
+@export var target : Character
 @onready var health_bar : ProgressBar = get_node("HealthBar")
 @onready var health_text : Label = get_node("HealthBar/HealthText")
 @export var flip_visual : bool
@@ -28,7 +28,7 @@ func _update_health_bar():
 	health_bar.value = cur_hp
 	health_text.text = str(cur_hp, " / ", max_hp)
 
-func _take_damage(damage):
+func take_damage(damage):
 	cur_hp -= damage
 	_update_health_bar()
 	if cur_hp <= 0 :
@@ -41,6 +41,18 @@ func heal (amount):
 		cur_hp = max_hp
 	_update_health_bar()
 
+func cast_combat_action (action):
+	if action.damage > 0:
+		target.take_damage(action.damage)
+	elif action.heal > 0:
+		heal(action.heal)
+	get_node("/root/BattleScene").end_current_turn()
+	
+func focus():
+	$Focus.show()
+
+func nofocus():
+	$Focus.hide()
 
 func _on_character_begin_turn(character):
 	pass

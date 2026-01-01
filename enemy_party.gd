@@ -3,8 +3,8 @@ extends Node2D
 @export var enemies: Array = []
 @export var index : int = 0
 
-var lizardman = preload("res://chara/lizardman.tscn").instantiate()
-var bore = preload("res://chara/battlecatsguythatIhate.tscn").instantiate()
+@onready var lizardman = preload("res://chara/lizardman.tscn").instantiate()
+@onready var bore = preload("res://chara/battlecatsguythatIhate.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
